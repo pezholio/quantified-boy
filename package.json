@@ -1,0 +1,14 @@
+{
+  "name": "behaviour-buttons",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "sudo node index.js"
+  },
+  "dependencies": {
+    "dotenv": "^2.0.0",
+    "node-dash-button": "^0.6.1",
+    "request": "^2.75.0"
+  }
+}
