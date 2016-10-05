@@ -29,11 +29,11 @@ var postPoint = function(metric) {
 }
 
 dash.on("detected", function (dash_id){
-    if (dash_id === process.env.BAD_BUTTON){
-        console.log("Naughty!")
-        postPoint('home-behaviour-points')
-    } else if (dash_id === process.env.GOOD_BUTTON){
-        console.log("Good!");
-        postPoint('home-acheivement-points')
-    }
+  if (dash_id === process.env.BAD_BUTTON){
+    console.log("Naughty!")
+    postPoint('home-behaviour-points')
+  } else if (dash_id === process.env.GOOD_BUTTON){
+    console.log("Good!");
+    postPoint('home-acheivement-points')
+  }
 });
