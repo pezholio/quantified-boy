@@ -1,7 +1,8 @@
 <html>
     <head>
         <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.css">
-        <link rel="stylesheet" href="bower_components/reveal.js/css/theme/white.css">
+        <link rel="stylesheet" href="bower_components/reveal.js/css/theme/league.css">
+        <link rel="stylesheet" href="bower_components/reveal.js/lib/css/solarized-dark.css">
     </head>
     <body>
         <div class="reveal">
@@ -9,13 +10,347 @@
                 <section data-background-image="img/pi-setup.jpg">
                   <h1>Quantified Boy</h1>
                   <h2>Building a 21st century star chart using a Raspberry Pi and Amazon Dash Buttons</h2>
+                  <aside class='notes' data-markdown>
+                    Blah blah intro whevs
+                  </aside>
                 </section>
-                <section>Slide 2</section>
+                <section data-background-image="img/gwilym-1.jpg" data-background-size="50%">
+                  <aside class='notes' data-markdown>
+                    This is my son, Gwilym. He's 6 and into superheroes, Star
+                    Wars and video games. Basically a carbon copy of me.
+                  </aside>
+                </section>
+                <section data-background-image="img/school.jpg">
+                  <aside class='notes' data-markdown>
+                    At his school they have a behaviour and reward system of points.
+                    Achievement points are rewarded for good work, and behaviour
+                    points are issued when they misbehave. This is all logged on
+                    a terrible Capita system
+                  </aside>
+                </section>
+                <section data-background-image="img/sims-1.png">
+                  <aside class='notes' data-markdown>
+                    That you log into
+                  </aside>
+                </section>
+                <section data-background-image="img/sims-2.png">
+                  <aside class='notes' data-markdown>
+                    Hunt around for the right link
+                  </aside>
+                </section>
+                <section data-background-image="img/sims-3.png">
+                  <aside class='notes' data-markdown>
+                    And eventually (when the page loads) access the Student dashboard.
+
+                    I thought, wouldn't it be great if I didn't have to do this?
+                  </aside>
+                </section>
+                <section data-background-image="img/sims-3.png">
+                  <h1>WE CAN SOLVE THIS PROBLEM WITH CODE!</h1>
+                  <h2><a href="https://github.com/pezholio/gboard">https://github.com/pezholio/gboard</a></h2>
+                  <aside class='notes' data-markdown>
+                    So, I built a screen scraper, that takes his behaviour and reward points
+                    and stores them...
+                  </aside>
+                </section>
+                <section data-background-image="img/bothan-1.png">
+                  <aside class='notes' data-markdown>
+                    In a metrics platform, we've built at the ODI, called Bothan
+
+                    Anyone can deploy their own version of Bothan, and metrics are added via a simple REST API
+                  </aside>
+                </section>
+                <section data-background-image="img/bothan-2.png">
+                  <aside class='notes' data-markdown>
+                    I can access the data as JSON
+                  </aside>
+                </section>
+                <section data-background-image="img/bothan-3.png">
+                  <aside class='notes' data-markdown>
+                    See a little visualisation
+                  </aside>
+                </section>
+                <section data-background-image="img/dashboard-1.png">
+                  <aside class='notes' data-markdown>
+                    And build a dashboard
+                  </aside>
+                </section>
+                <section data-background-image="img/email.png"  data-background-size="70%">
+                  <aside class='notes' data-markdown>
+                    And I've also set up email alerts too
+                  </aside>
+                </section>
+                <section data-background-image="img/gwilym-2.jpg" data-background-size="50%">
+                  <aside class='notes' data-markdown>
+                    This plugged along nicely throughout reception class, then,
+                    year one came. And it was a whole different ball game.
+
+                    He racked up 29 behaviour points in not for any sort of major naughtiness,
+                    just low level cheekiness and messing around, y’know,
+                    the sort of stuff that five year olds do
+
+                    Whether or not I agreed with what the school was doing,
+                    I knew I needed to help him get better at school.
+                  </aside>
+                </section>
+                <section data-background-image="img/reward-chart.jpg" data-background-size="70%">
+                  <aside class='notes' data-markdown>
+                    The first thing that came to mind was a reward chart. We'd tried these before
+                    and they kinda worked.
+
+                    We thought we'd give him an achievement point for a good day at school
+                    and a behaviour point for a bad day. We’d also give him points for
+                    his general behaviour at home. If he got a certain amount of
+                    reward points by the end of November (his birthday), he could
+                    have a big birthday party with all his friends.
+                  </aside>
+                </section>
+                <section>
+                  <h1>The trouble with star charts</h1>
+                  <ul>
+                    <li>Messy</li>
+                    <li>They fill up</li>
+                    <li>Get tatty</li>
+                    <li>Not very engaging</li>
+                    <li>I don't get to mess around with tech!</li>
+                  </ul>
+                  <aside class='notes' data-markdown>
+                    Only problem is...
+
+                    That's when I got to thinking about these...
+                  </aside>
+                </section>
+                <section data-background-image="img/dash.jpg">
+                  <aside class='notes' data-markdown>
+                    Amazon dash buttons (if you don't know) are buttons that Amazon
+                    provide to give you a quick way of reordering stuff like washing
+                    powder, cat food, razors and (weirdly) play doh.
+                  </aside>
+                </section>
+                <section data-background-image="img/dash-hack.png">
+                  <aside class='notes' data-markdown>
+                    I'd seen blog posts about hacking them before, and thought I'd
+                    give it a go
+
+                    I could have two buttons to log metrics in Bothan, in a similar way to how
+                    I log the school's points
+                  </aside>
+                </section>
+                <section>
+                  <h1>Putting it all together</h1>
+                  <ul>
+                    <li>A Raspberry Pi</li>
+                    <li>2 Amazon Dash buttons</li>
+                    <li>Node.js</li>
+                    <li><code>sudo apt-get install libpcap</code></li>
+                    <li><code>npm install node-dash-button</code></li>
+                  </ul>
+                  <aside class='notes' data-markdown>
+                    I got together all the things I needed.
+                    Installed node.js on my Pi, then installed the dependencies
+                    And set up my Buttons using the Amazon app (more instructions in the blog)
+                  </aside>
+                </section>
+                <section>
+                  <h1>Locating the buttons</h1>
+                    <pre><code class='sh'>
+$ sudo node_modules/node-dash-button/bin/findbutton
+Watching for arp & udp requests on your local network, please try \
+to press your dash now
+Dash buttons should appear as manufactured by 'Amazon Technologies Inc.'
+Possible dash hardware address detected: ac:63:be:dc:a9:66  \
+Manufacturer: Amazon Technologies Inc. Protocol: udp
+                    </pre></code>
+                    <aside class='notes' data-markdown>
+                      The next step was to find the buttons on the network - this
+                      script listens for all network traffic and returns the Mac
+                      address.
+
+                      When you press the dash button, it wakes up and broadcasts
+                      to the network.
+
+                      It was then a case of pressing both buttons and getting their
+                      mac address
+                    </aside>
+                </section>
+                <section data-background-image="img/buttons.jpg"></section>
+                <section data-background-image="img/buttons.jpg">
+                  <h1>Testing it out</h1>
+                  <pre>
+                    <code>
+var dash_button = require('node-dash-button');
+var bad_button = '' // The MAC address for the good button goes here
+var good_button = '' // The MAC address for the bad button goes here
+var dash = dash_button([bad_button, good_button], null, null, 'all');
+dash.on("detected", function (dash_id){
+  if (dash_id === bad_button){
+      console.log("Naughty!")
+  } else if (dash_id === good_button){
+      console.log("Good!");
+  }
+});
+                    </code>
+                  </pre>
+                  <aside class='notes' data-markdown>
+                    Then, armed with my addresses, I wrote a quick script to test it out
+
+                    This sends a message to the console when one of the buttons is pressed
+                  </aside>
+                </section>
+                <section data-background-image="img/bothan-1.png">
+                  <aside class='notes' data-markdown>
+                    The next step was logging some metrics in here
+                  </aside>
+                </section>
+                <section>
+                  <h1>Post some data</h1>
+                  <pre><code style="max-height: 600px">
+var bothan_url = '' // The URL of your Bothan install
+var bothan_username = '' // The URL of your Bothan install
+var bothan_password = '' // The URL of your Bothan install
+var postPoint = function(metric) {
+  var bothanURL = bothan_url
+  var metricURL = bothanURL + '/metrics/' + metric + '.json'
+  var date = new Date()
+  request(metricURL, function(error, response, body) {
+    json = JSON.parse(body)
+    value = (json == null) ? 0 : json.value
+    request.post(metricURL, {
+      auth: {
+        user: bothan_username,
+        pass: bothan_password
+      },
+      json: {
+        time: date.toISOString(),
+        value: value + 1
+      }
+    })
+  })
+}
+                  </code></pre>
+                  <aside class='notes' data-markdown>
+                    This code is all I needed to create a new metric with a particular
+                    name - if it exists I append 1 to the existing metric and post
+                    the new value
+                  </aside>
+                </section>
+                <section>
+                  <h1>Do something useful</h1>
+                  <pre><code>
+dash.on("detected", function (dash_id) {
+  if (dash_id === bad_button){
+    console.log("Naughty!")
+    postPoint('home-behaviour-points')
+  } else if (dash_id === good_button){
+    console.log("Good!");
+    postPoint('home-acheivement-points')
+  }
+});
+                  </code></pre>
+                  <aside class='notes' data-markdown>
+                    I then tied the two things together - EXPLAIN THIS
+                  </aside>
+                </section>
+                <section>
+                  <h1>Start on boot</h1>
+                  <pre><code>
+#!/bin/sh -e
+#
+# /etc/rc.local
+
+cd /home/pi/quantified-boy && npm start >> /tmp/quantified-boy.txt &
+
+exit 0
+                  </code></pre>
+                  <aside class='notes' data-markdown>
+                    And then edited the /etc/rc.local file on my pi, to run it on
+                    boot.
+
+                    This cds into the directory and runs my code, outputting to a log
+                    every time the Pi boots
+
+                    There are better ways of doing this, but this suited my purposes
+                    and was quick and dirty
+                  </aside>
+                </section>
+                <section data-background-image="img/dashboard.png">
+                  <aside class='notes' data-markdown>
+                    I could then add the new metrics to my dashboard
+                  </aside>
+                </section>
+                <section>
+                  <h1>Show the dashboard</h1>
+                  <pre><code>
+# ~/.config/lxsession/LXDE-pi/autostart
+@xset s off # Disable screen blanking
+@xset -dpms # Disable power management
+@xset s noblank # Disable screensaver
+@chromium-browser --kiosk --incognito http://demo.bothan.io/\
+dashboards/bothan # Load Chromium with the dashboard
+                  </code></pre>
+                  <aside class='notes' data-markdown>
+                    And then make my Pi load the dashboard when it loads
+
+                    This worked perfectly!
+                  </aside>
+                </section>
+                <section data-background-image="img/screen.png">
+                  <aside class='notes' data-markdown>
+                    I then invested in a tiny screen (which was really impressively priced - thanks China!)
+                  </aside>
+                </section>
+                <section data-background-image="img/pi-setup.jpg">
+                  <aside class='notes' data-markdown>
+                    And set it all up. Gwilym took to it immediately. He loved pressing
+                    the buttons and keeping up to date with how he was doing
+
+                    I guess what you want to know is, did he get his party?
+                  </aside>
+                </section>
+                <section data-background-image="img/party.jpg">
+                  <aside class='notes' data-markdown>
+                    Well, yeah. He did.
+
+                    Whether it was correlation or causation, after a month or so
+                    his behaviour really improved. He racked up the achievement points
+                    at home, and he's doing pretty well.
+
+                    He'll always be a bit cheeky, but I wouldn't have him any other way
+                  </aside>
+                </section>
+                <section>
+                  <h1>Fin</h1>
+
+                  <p>https://github.com/pezholio/quantified-boy</p>
+                  <p>https://hackernoon.com/quantified-boy-726e9558594f</p>
+                  <p>@pezholio</p>
+
+                </section>
+
             </div>
         </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/headjs/0.96/head.min.js"></script>
         <script src="bower_components/reveal.js/js/reveal.js"></script>
         <script>
-            Reveal.initialize();
+          // More info https://github.com/hakimel/reveal.js#configuration
+          Reveal.initialize({
+            history: true,
+            // More info https://github.com/hakimel/reveal.js#dependencies
+            dependencies: [{
+              src: 'bower_components/reveal.js/plugin/markdown/marked.js'
+            }, {
+              src: 'bower_components/reveal.js/plugin/markdown/markdown.js'
+            }, {
+              src: 'bower_components/reveal.js/plugin/notes/notes.js',
+              async: true
+            }, {
+              src: 'bower_components/reveal.js/plugin/highlight/highlight.js',
+              async: true,
+              callback: function() {
+                hljs.initHighlightingOnLoad()
+              }
+            }]
+          })
         </script>
     </body>
 </html>
